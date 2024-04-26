@@ -1,0 +1,2 @@
+# Mounted folder to keep DB data for local development
+local/db_data/
