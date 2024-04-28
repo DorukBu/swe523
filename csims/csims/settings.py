@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'bootstrap4',
     'accounts.apps.AccountsConfig',
+    'communities.apps.CommunitiesConfig',
 ]
 
 MIDDLEWARE = [
