@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accounts.apps.AccountsConfig',
     'communities.apps.CommunitiesConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
