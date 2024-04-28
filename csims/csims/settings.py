@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'swe573.dorukb.com',
     'www.swe573.dorukb.com',
+    'localhost',
 ]
 
 
