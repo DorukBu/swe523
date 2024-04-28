@@ -1,5 +1,5 @@
 # Mounted folder to keep DB data for local development
-local/db_data/
+**/db_data/
 
 
 # Byte-compiled / optimized / DLL files
