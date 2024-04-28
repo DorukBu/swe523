@@ -33,6 +33,10 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+# Configure the header to trust when the application is behind a reverse proxy
+# that terminates SSL (HTTPS) connections.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
