@@ -1,0 +1,36 @@
+name: Manual Deploy to Dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build & Deploy
+      env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{secrets.SSH_HOST}}
+          USER_NAME: ${{secrets.USER_NAME}}
+          PROJECT_DIR: /home/${USER_NAME}/django_project/swe573
+    
+      run: |
+        echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+        ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+
+            # Stop the project service
+            sudo systemctl stop swe573.service
+
+            # Now we have got the access of EC2 and we will start the deploy .
+            cd ${PROJECT_DIR} &&
+            git checkout dev &&
+            git fetch --all &&
+            git reset --hard origin/dev &&
+            git pull origin dev
+
+            # Start the project service
+            sudo systemctl start swe573.service
