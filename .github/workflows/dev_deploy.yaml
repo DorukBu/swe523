@@ -16,7 +16,7 @@ jobs:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOSTNAME: ${{secrets.SSH_HOST}}
           USER_NAME: ${{secrets.USER_NAME}}
-          PROJECT_DIR: /home/${USER_NAME}/django_project/swe573
+          PROJECT_DIR: /home/ubuntu/django_project/swe573
     
       run: |
         echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
