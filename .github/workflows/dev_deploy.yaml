@@ -23,9 +23,9 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
             # Stop the project service
-            sudo systemctl stop swe573.service
+            sudo systemctl stop swe573.service &&
 
-            # Now we have got the access of EC2 and we will start the deploy .
+            # Now we have got the access of EC2 and we will start the deploy
             cd ${PROJECT_DIR} &&
             git checkout dev &&
             git fetch --all &&
@@ -34,3 +34,4 @@ jobs:
 
             # Start the project service
             sudo systemctl start swe573.service
+            '
