@@ -1,7 +1,9 @@
-name: Manual Deploy to Dev
+name: Auto Deploy to Prod
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+     - main
 
 jobs:
   deploy:
@@ -13,9 +15,9 @@ jobs:
 
     - name: Build & Deploy
       env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
-          HOSTNAME: ${{secrets.SSH_HOST_DEV}}
-          USER_NAME: ${{secrets.USER_NAME_DEV}}
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+          HOSTNAME: ${{ secrets.SSH_HOST_PROD }}
+          USER_NAME: ${{ secrets.USER_NAME_PROD }}
           PROJECT_DIR: /home/ubuntu/django_project/swe573
     
       run: |
@@ -28,9 +30,9 @@ jobs:
             # Now we have got the access of EC2 and we will start the deploy
             cd /home/ubuntu/django_project/swe573 &&
             git fetch --all &&
-            git checkout dev &&
-            git reset --hard origin/dev &&
-            git pull origin dev &&
+            git checkout main &&
+            git reset --hard origin/main &&
+            git pull origin main &&
 
             # Start the project service
             sudo systemctl start swe573.service
