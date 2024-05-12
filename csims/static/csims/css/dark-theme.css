@@ -1,0 +1,20 @@
+/* Dark Theme Styles */
+
+body {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .navbar {
+    background-color: #222;
+  }
+  
+  .mynav {
+    color: #fff !important;
+  }
+  
+  .mycontent {
+    background-color: #444;
+    color: #fff;
+  }
+  

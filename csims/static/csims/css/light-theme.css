@@ -1,0 +1,20 @@
+/* Light Theme Styles */
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #f8f9fa;
+  }
+  
+  .mynav {
+    color: #fff !important;
+  }
+  
+  .mycontent {
+    background-color: #fff;
+    color: #333;
+  }
+  
