@@ -1,4 +1,4 @@
-name: Manual Deploy to Dev
+name: Auto Deploy to Dev
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build & Deploy
+    - name: Dev Deployment
       env:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
           HOSTNAME: ${{secrets.SSH_HOST_DEV}}
