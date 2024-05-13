@@ -72,8 +72,9 @@
             <a class="nav-item nav-link" href="{% url 'communities:all' %}" class="btn btn-simple">Communities</a>
             <a class="nav-item nav-link" href="{% url 'communities:create' %}" class="btn btn-simple">Create Community</a>
             <a class="nav-item nav-link" href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a>
+            <img class="w-32 h-32 md:h-auto rounded-full" src="{{ user.profile_pic.url }}">
           {% else %}
-             <a class="nav-item nav-link" href="{% url 'communities:all' %}"class="btn btn-simple">Communities</a> 
+            <a class="nav-item nav-link" href="{% url 'communities:all' %}"class="btn btn-simple">Communities</a> 
             <a class="nav-item nav-link" href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a>
             <a class="nav-item nav-link" href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a>
           {% endif %}

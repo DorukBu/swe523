@@ -1,4 +1,25 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <h1>Sign Up</h1>
+  <form method="POST" enctype="multipart/form-data" class="form">  <!-- Add enctype attribute for file upload -->
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="form-group">
+      <label for="id_profile_pic">Profile Picture</label>
+      {{ form.profile_pic }}
+    </div>
+    {% buttons %}
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    {% endbuttons %}
+  </form>
+</div>
+{% endblock %}
+
+
+{% comment %} {% extends "base.html" %}
 
 {# at the terminal, run pip install django-bootstrap4 #}
 {% load bootstrap4 %}
@@ -14,4 +35,4 @@
     {% endbuttons %}
   </form>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
