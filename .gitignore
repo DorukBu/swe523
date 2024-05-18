@@ -1,3 +1,7 @@
+# Ignore profile pictures except default one
+csims/media/*
+!csims/media/profile_pics/default.jpg
+
 # Mounted folder to keep DB data for local development
 **/db_data/
 
@@ -5,6 +9,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pyc
+*.pyo
 
 # C extensions
 *.so
